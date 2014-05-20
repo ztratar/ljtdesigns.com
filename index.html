@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#ljt-navbar-collapse">
@@ -11,14 +11,14 @@ layout: default
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">LJT Designs</a>
+			<a class="navbar-brand visible-xs" href="#">LJT Designs</a>
 		</div>
 		<div class="collapse navbar-collapse" id="ljt-navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="#">Home</a></li>
 				<li><a href="#whyus">Why choose us?</a></li>
-				<li><a href="#homes+designs">Homes &amp; Designs</a></li>
-				<li><a href="#plans+pricing">Plans &amp; Pricing</a></li>
+				<li><a href="#homes-designs">Homes &amp; Designs</a></li>
+				<li><a href="#plans-pricing">Plans &amp; Pricing</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 		</div>
@@ -28,61 +28,59 @@ layout: default
 	<div class="primary-bg-image"></div>
 	<div class="primary-bg-container-shadow"></div>
 </div>
-<div class="container">
-	<div class="hero-info-wrap">
-		<div class="hero-info">
-			<small>Affordable Luxury</small>
-			<h1>LJT Designs</h1>
-			<p class="description">
-				Home Design, Remodeling, &amp; Building in Chicagoland
-			</p>
+<div class="hero-info-wrap">
+	<div class="hero-info">
+		<small><i>&#0167</i> Affordable Luxury <i>&#0167</i></small>
+		<h1>LJT Designs</h1>
+		<p class="description">
+			Home Design, Remodeling, <span>&amp;</span> Building in Chicagoland
+		</p>
+	</div>
+</div>
+<div class="section-wrap">
+	<div class="container">
+		<div class="section section-cards container" id="whyus">
+			<div class="card top-left">
+				<div class="card-contents">
+					<h3>The real deal</h3>
+					<p>The best home design requires care, creativity, and knowledge.</p>
+				</div>
+			</div>
+			<div class="card top-right">
+				<div class="card-contents">
+					<h3>Plans starting at <span>$10,000</span></h3>
+					<p>We source great products and pass on the manufacturer prices to you.</p>
+				</div>
+			</div>
+			<div class="card bottom-left">
+				<div class="card-contents">
+					<h3>Experience matters</h3>
+					<p>Our process is designed to maximize transparency and make you happy.</p>
+				</div>
+			</div>
+			<div class="card bottom-right">
+				<div class="card-contents">
+					<h3>Your design</h3>
+					<p>We work closely with you. Don't limit your imagination.</p>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class="section section-cards" id="whyus">
-		<div class="card top-left">
-			<div class="card-contens">
-				<h3>We're the real deal</h3>
-				<p>The best home design requires care, creativity, and knowledge.</p>
-			</div>
-		</div>
-		<div class="card top-right">
-			<div class="card-contens">
-				<h3>Plans starting at <span>$10,000</span></h3>
-				<p>We source great products and pass on the manufacturer prices to you.</p>
-			</div>
-		</div>
-		<div class="card bottom-left">
-			<div class="card-contens">
-				<h3>We've done this before</h3>
-				<p>Our process is designed to maximize transparency and make you happy.</p>
-			</div>
-		</div>
-		<div class="card bottom-left">
-			<div class="card-contens">
-				<h3>Your design</h3>
-				<p>We work closely with you. Don't limit your imagination.</p>
-			</div>
-		</div>
-	</div>
-	<div class="section" id="homes+designs">
-		<h2>Homes &amp; Designs</h2>
-		<ul class="designs">
-			{% for design in site.designs %}
-			<li>
-				<div class="design-card" id="{{ design.id }}">
-					<div class="card-bg" style="background-image: url('/img/designs/{{ design.id }}/1.png')"></div>
-					<div class="img-carousel">
-						<div class="left">
-							<i class="icon icon-arrow-left"></i>
+	<div class="container">
+		<div class="section" id="homes-designs">
+			<h2>Homes &amp; Designs</h2>
+			<ul class="designs">
+				{% for design in site.designs %}
+				<li>
+					<div class="design-card" id="{{ design.id }}">
+						<div class="card-bg" style="background-image: url('/img/designs/{{ design.id }}/1.png')"></div>
+						<div class="img-carousel-wrap">
+							<div class="img-carousel">
+								<div class="img">
+									<img src="/img/designs/1317/1.png">
+								</div>
+							</div>
 						</div>
-						<div class="right">
-							<i class="icon icon-arrow-right"></i>
-						</div>
-						<ul class="imgs">
-							<li>
-								<img src="/img/designs/1317/1.png">
-							</li>
-						</ul>
 						<div class="design-card-contents">
 							<h3>{{ design.name }}</h3>
 							<span>{{ design.style }} <span class="location">{{ design.location }}</span></span>
@@ -93,48 +91,68 @@ layout: default
 							</div>
 						</div>
 					</div>
-				</div>
-			</li>
-			{% endfor %}
-		</ul>
-	</div>
-	<div class="section" id="plans+pricing">
-		<div class="est">
-			Designing since 1988
-		</div>
-		<div class="starting">
-			Designing dreams starting at <span>$10,000</span>
-			<div class="divider"></div>
-			<p>We take the considerations to the right into account. Take a minute to drop us a line!</p>
-			<a class="btn btn-default">Contact us for a quick quote</a>
-		</div>
-		<div class="questions">
-			<h5>Considerations:</h5>
-			<ul>
-				<li>Is this a room re-design? An addition? Something entirely new?</li>
-				<li>What's your budget?</li>
-				<li>How long are you expecting the project to take?</li>
-				<li>What existing finds expire you?</li>
-				<li>What's your style?</li>
-				<li>How involved do you want to be in the process?</li>
-				<li>Where are you located?</li>
+				</li>
+				{% endfor %}
 			</ul>
 		</div>
 	</div>
+	<div class="section" id="plans-pricing">
+		<div class="container">
+			<div class="plan-contact-card">
+				<div class="est">
+					Designing since 1988
+				</div>
+				<div class="starting">
+					<p class="main">Designing dreams starting at <span>$10,000</span></p>
+					<div class="divider"></div>
+					<p>Take a minute to drop us a line!</p>
+					<a class="btn btn-success">Contact us for a quote</a>
+				</div>
+			</div>
+			<div class="questions">
+				<h5>We can do it!</h5>
+				<ul class="clearfix">
+					<li>Interior Design</li>
+					<li>Custom Building &amp; Additions</li>
+					<li>Home Renovation</li>
+					<li>Home Remodeling</li>
+					<li>Kitchens</li>
+					<li>Baths</li>
+					<li>Basements</li>
+					<li>Exteriors &amp; Outdoors</li>
+					<li>Interiors</li>
+					<li>Lighting</li>
+					<li>Furniture</li>
+					<li>Window Treatments</li>
+					<li>Hardware</li>
+					<li>Custom Bedding</li>
+					<li>Reupholstering</li>
+					<li>Fabric</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<div class="section" id="contact">
-		<form action="/submit/contact">
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon">Your email</span>
-				<input type="email" class="form-control" placeholder="example@youremail.com" name="email">
-			</div>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon">Your city</span>
-				<input type="text" class="form-control" placeholder="City, State" name="city">
-			</div>
-			<div class="input-group input-group-lg">
-				<span class="input-group-addon">Budget</span>
-				<input type="text" class="form-control" placeholder="$xx,xxx" name="budget">
-			</div>
-		</form>
+		<div class="container">
+			<h4>Let's chat, free &amp; no commitment necessary!</h4>
+			<form action="/submit/contact">
+				<div class="input-group input-group-lg clearfix">
+					<span class="input-group-addon">Your email</span>
+					<input type="email" class="form-control" placeholder="example@youremail.com" name="email">
+				</div>
+				<div class="input-group input-group-lg clearfix">
+					<span class="input-group-addon">Your city</span>
+					<input type="text" class="form-control" placeholder="City, State" name="city">
+				</div>
+				<div class="input-group input-group-lg clearfix">
+					<span class="input-group-addon">Budget</span>
+					<input type="text" class="form-control" placeholder="$xx,xxx" name="budget">
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+		2014 &copy; LJT Designs, Inc.
 	</div>
 </div>

@@ -1,3 +1,471 @@
+@import '../bower_components/bootstrap/less/variables';
+@import '../bower_components/bootstrap/less/mixins';
+
+@import 'fonts';
+
 body, html {
-	body: blue;
+	color: #444;
+	font-family: 'Helvetica Neue', Helvetica, Arial;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Optimus';
+}
+
+.navbar {
+	background: rgba(0,0,0,0.4);
+	border: none;
+	border-radius: 0;
+	min-height: 46px;
+	position: fixed;
+	z-index: 200;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	.navbar-nav {
+		& > li > a {
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+			font-weight: 200;
+			padding: 13px 46px;
+			letter-spacing: 1px;
+
+			@media (max-width: @screen-lg) {
+				padding: 13px 32px;
+			}
+
+			@media (max-width: @screen-md) {
+				padding: 13px 16px;
+			}
+
+			&:hover {
+				background: transparent;
+				text-decoration: underline;
+			}
+		}
+
+		@media (min-width: @screen-sm) {
+			float: none;
+			margin: 0 auto;
+			text-align: center;
+
+			& > li {
+				float: none;
+				display: inline-block;
+			}
+		}
+	}
+}
+
+.primary-bg-image-wrap {
+	position: absolute;
+	z-index: 10;
+	height: 90%;
+	background: #777;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.hero-info-wrap {
+	position: absolute;
+	display: table;
+	z-index: 100;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 80%;
+	text-align: center;
+
+	.hero-info {
+		color: white;
+		display: table-cell;
+		vertical-align: middle;
+		padding-top: 46px;
+
+		small {
+			opacity: 0.9;
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+
+			i {
+				opacity: 0.6;
+				font-family: 'Optimus';
+				-webkit-transform: rotate(78deg);
+				-ms-transform: rotate(90deg);
+				transform: rotate(90deg);
+				display: inline-block;
+				font-size: 43px;
+				line-height: 0px;
+				font-family: 'ios7-icon';
+				margin: 0;
+				vertical-align: middle;
+				-webkit-text-rendering: geometricPrecision;
+				-moz-text-rendering: geometricPrecision;
+				-ms-text-rendering: geometricPrecision;
+				-o-text-rendering: geometricPrecision;
+				text-rendering: geometricPrecision;
+				-webkit-font-smoothing: antialiased;
+				-moz-font-smoothing: antialiased;
+				-ms-font-smoothing: antialiased;
+				-o-font-smoothing: antialiased;
+				font-smoothing: antialiased;
+				margin: 0 13px 5px;
+			}
+		}
+
+		h1 {
+			font-size: 124px;
+			margin: 14px 0 28px;
+		}
+
+		p.description {
+			font-size: 26px;
+			font-weight: 100;
+			letter-spacing: 1px;
+			max-width: 420px;
+			margin: 0 auto;
+			opacity: 0.86;
+
+			span {
+				font-family: 'Optimus';
+				font-size: 38px;
+				line-height: 18px;
+				vertical-align: middle;
+				margin: 0 1px 0 4px;
+			}
+		}
+	}
+}
+
+.section-wrap {
+	position: absolute;
+	top: 80%;
+	left: 0;
+	right: 0;
+}
+
+.section {
+	position: relative;
+	z-index: 100;
+	margin: 0 0 70px 0;
+
+	h2 {
+		text-align: center;
+		margin: 70px 0 52px 0;
+	}
+}
+
+.section-cards {
+	position: relative;
+	height: 520px;
+	box-shadow: 0 3px 28px rgba(0,0,0,.04), 0 3px 8px rgba(0,0,0,.08);
+
+	@media (max-width: @screen-sm) {
+		height: auto;
+	}
+
+	.card {
+		position: absolute;
+		display: table;
+		width: 50%;
+		height: 50%;
+		text-align: center;
+
+		@media (max-width: @screen-sm) {
+			position: relative;
+			width: 100%;
+			height: auto;
+			padding: 40px 0;
+		}
+
+		.card-contents {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 40px;
+		}
+
+		h3 {
+			font-size: 44px;
+			line-height: 38px;
+			opacity: 0.94;
+
+			span {
+				font-size: 42px;
+				font-family: 'Helvetica Neue';
+				font-weight: 600;
+				line-height: 45px;
+				opacity: .64;
+			}
+		}
+
+		p {
+			font-size: 13px;
+			text-transform: uppercase;
+			font-weight: 500;
+			letter-spacing: 1px;
+			max-width: 390px;
+			margin: 20px auto 0;
+			opacity: 0.84;
+		}
+
+		@card-bg: rgba(0,0,0,.08);
+
+		&.top-left { top: 0; left: 0; border-bottom: 1px solid @card-bg; border-right: 1px solid @card-bg; }
+		&.top-right { top: 0; right: 0; border-bottom: 1px solid @card-bg; }
+		&.bottom-left { bottom: 0; left: 0; border-right: 1px solid @card-bg; }
+		&.bottom-right { bottom: 0; right: 0;}
+	}
+}
+
+ul.designs {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		display: block;
+	}
+}
+
+.design-card {
+	display: block;
+	box-shadow: 0 3px 28px rgba(0,0,0,.04), 0 3px 8px rgba(0,0,0,.08);
+	position: relative;
+	margin-bottom: 40px;
+
+	.card-bg {
+		position: absolute;
+		z-index: 10;
+		background: #eee;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 58%;
+	}
+
+	.img-carousel-wrap {
+		display: block;
+		position: relative;
+		width: 58%;
+		padding: 48px;
+	}
+
+	.img-carousel {
+		position: relative;
+		z-index: 100;
+		margin: 0;
+		padding: 24px;
+		background: white;
+		margin-right: -114px;
+		box-shadow: 0 3px 28px rgba(0,0,0,.04), 0 3px 8px rgba(0,0,0,.08);
+
+		.img {
+			background: #aaa;
+			height: 420px;
+			width: 100%;
+		}
+	}
+
+	.design-card-contents {
+		position: absolute;
+		right: 0;
+		left: calc(~"58% + 66px");
+		padding: 26px 38px 46px;
+		top: 0;
+		bottom: 0;
+
+		h3 {
+			font-size: 60px;
+			line-height: 60px;
+		}
+
+		p {
+			font-size: 18px;
+			font-weight: 100;
+			letter-spacing: 1px;
+			line-height: 26px;
+		}
+
+		span {
+			font-weight: 600;
+			text-transform: uppercase;
+			margin: 14px 0 30px;
+			display: block;
+
+			span.location {
+				font-family: Georgia;
+				font-weight: 400;
+				text-transform: none;
+				margin-left: 8px;
+				font-size: 13px;
+				vertical-align: top;
+				display: inline-block;
+				margin-top: 1px;
+				opacity: 0.84;
+			}
+		}
+
+		.btns {
+			position: absolute;
+			bottom: 46px;
+		}
+	}
+}
+
+#plans-pricing {
+	background: #555;
+	color: white;
+	padding: 72px 0;
+
+	.plan-contact-card {
+		position: relative;
+		float: left;
+		box-shadow: 0 3px 28px rgba(0,0,0,.04), 0 3px 8px rgba(0,0,0,.08);
+		background: white;
+		width: 35%;
+		color: rgba(0,0,0,0.8);
+
+		.est {
+			text-align: center;
+			padding: 18px 24px;
+			background: #eee;
+			color: rgba(0,0,0,.5);
+			font-style: italic;
+			font-family: Georgia;
+		}
+
+		.starting {
+			padding: 24px;
+			text-align: center;
+
+			.divider {
+				width: 100%;
+				height: 0;
+				border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+				margin: 34px 0 23px;
+			}
+
+			p.main {
+				text-align: center;
+				font-size: 46px;
+				font-family: 'Optimus';
+				line-height: 46px;
+				margin: 0;
+				padding: 24px 0 5px;
+				letter-spacing: 0px;
+				opacity: 1;
+			}
+
+			p {
+				font-size: 22px;
+				font-weight: 100;
+				line-height: 28px;
+				margin: 4px 0 80px 0;
+				letter-spacing: 1px;
+				opacity: 0.84;
+			}
+
+			.btn {
+				position: absolute;
+				bottom: 24px;
+				left: 24px;
+				right: 24px;
+				padding: 18px;
+				width: auto;
+				text-align: center;
+				font-size: 16px;
+				text-transform: uppercase;
+				font-weight: 600;
+			}
+		}
+	}
+
+	.questions {
+		float: right;
+		width: 65%;
+		padding: 26px 0 0 78px;
+
+		h5 {
+			font-size: 32px;
+			font-family: 'Optimus';
+			margin: 0 0 24px;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0 18px;
+			list-style-type: square;
+
+			li {
+				float: left;
+				width: 50%;
+				margin: 9px 0px;
+				font-size: 18px;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
+
+#contact {
+	text-align: center;
+
+	h4 {
+		font-size: 32px;
+		margin-bottom: 32px;
+	}
+
+	form {
+		max-width: 480px;
+		margin: 0 auto;
+		padding: 24px;
+		box-shadow: 0 3px 28px rgba(0,0,0,.04), 0 3px 8px rgba(0,0,0,.08);
+
+		.input-group {
+			margin-bottom: 16px;
+			display: block;
+			border: none;
+
+			.input-group-addon {
+				box-shadow: inset 0 3px 28px rgba(0,0,0,.03), inset 0 3px 6px rgba(0,0,0,.06);
+				display: inline-block;
+				float: left;
+				width: 34%;
+				text-align: right;
+				border: none;
+			}
+
+			.form-control {
+				box-shadow: inset 0 3px 28px rgba(0,0,0,.03), inset 0 3px 6px rgba(0,0,0,.06);
+				display: inline-block;
+				width: 66%;
+				border: none;
+			}
+		}
+
+		.btn {
+			width: 100%;
+			padding: 18px;
+			text-transform: uppercase;
+			font-size: 18px;
+			margin-top: 16px;
+			font-weight: 700;
+		}
+	}
+}
+
+.footer {
+	background: #DDDDDD;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	padding: 24px;
 }
