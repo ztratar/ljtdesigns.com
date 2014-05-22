@@ -344,13 +344,36 @@ ul.designs {
 			padding: 0;
 		}
 
+		.img-center-wrap {
+			margin: 0 auto;
+			max-width: 100%;
+		}
+
+		.img-wrap {
+			display: table-cell;
+			vertical-align: middle;
+			max-width: 100%;
+			height: 420px;
+		}
+
+		.img-table {
+			width: 100%;
+			height: 1000px;
+			margin-top: -290px;
+			display: table;
+		}
+
 		.img {
 			display: block;
 			height: 420px;
 			width: 100%;
+			position: relative;
+			overflow: hidden;
 			background-color: #aaa;
-			background-size: cover;
-			background-position: 50% 50%;
+
+			img {
+				max-width: 100%;
+			}
 		}
 	}
 
