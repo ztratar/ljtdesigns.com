@@ -35,6 +35,8 @@ $(function() {
 		effect: 'fadeIn'
 	});
 	$('.slick-active img').trigger('load-img');
+	$('.slick-active + div').find('img').trigger('load-img');
+
 	calculateSections();
 	$(window).on('resize', calculateSections);
 

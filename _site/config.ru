@@ -6,7 +6,7 @@ Bundler.require
 
 use Rack::Deflater
 use Rack::Static, 
-  :urls => ["/img", "/css", "/js"],
+  :urls => ["/img", "/css", "/js", "/fonts"],
   :root => "_site"
 
 run lambda { |env|
