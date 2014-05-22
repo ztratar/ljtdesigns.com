@@ -24,7 +24,6 @@ $(function() {
 
 			$.each([$active, $next, $prev], function(i, $wrap) {
 				if ($wrap) {
-					console.log($($wrap));
 					$($wrap).find('img').trigger('load-img');
 				}
 			});
