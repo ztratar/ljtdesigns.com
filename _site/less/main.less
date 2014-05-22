@@ -514,6 +514,10 @@ ul.designs {
 					padding: 9px 14px;
 					margin-top: 6px;
 				}
+
+				@media (max-width: @screen-xs) {
+					margin-right: 6px;
+				}
 			}
 
 			.share {
@@ -526,17 +530,29 @@ ul.designs {
 					margin-top: 8px;
 				}
 
+				@media (max-width: @screen-xs) {
+					margin-top: 6px;
+				}
+
 				label {
 					background: @accent !important;
 					color: white !important;
 					padding: 12px 21px !important;
 					margin-top: 0 !important;
+
+					@media (max-width: @screen-xs) {
+						padding: 8px 16px !important;
+					}
 				}
 
 				.social.top {
 					margin-top: -91px !important;
 					position: absolute;
 					z-index: 400;
+
+					@media (max-width: @screen-xs) {
+						margin-left: -170px !important;
+					}
 				}
 			}
 		}
