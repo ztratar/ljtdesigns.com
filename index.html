@@ -70,11 +70,13 @@ layout: default
 				{% for design in site.designs %}
 				<li>
 					<div class="design-card" id="{{ design.id }}">
-						<div class="card-bg" style="background-image: url('/img/designs/{{ design.id }}/1.png')"></div>
+						<div class="card-bg"></div>
 						<div class="img-carousel-wrap">
 							<div class="img-carousel">
 								{% for i in (1...design.numImages) %}
-									<div class="img" style="background-image: url(/img/designs/{{ design.id }}/{{ i }}.jpg)"></div>
+									<div class="img">
+										<img class="img lazy" data-original="/img/designs/{{ design.id }}/{{ i }}.jpg">
+									</div>
 								{% endfor %}
 							</div>
 						</div>

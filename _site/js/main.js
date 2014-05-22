@@ -16,7 +16,25 @@ $(function() {
 		}
 	}
 
-	$('.img-carousel').slick();
+	$('.img-carousel').slick({
+		onAfterChange: function(carousel) {
+			var $active = carousel.$list.find('.slick-active') || carousel.find('.img:eq(0)'),
+				$next = $active.next(),
+				$prev = $active.prev();
+
+			$.each([$active, $next, $prev], function(i, $wrap) {
+				if ($wrap) {
+					console.log($($wrap));
+					$($wrap).find('img').trigger('load-img');
+				}
+			});
+		}
+	});
+	$('.img-carousel img').lazyload({
+		event: 'load-img',
+		effect: 'fadeIn'
+	});
+	$('.slick-active img').trigger('load-img');
 	calculateSections();
 	$(window).on('resize', calculateSections);
 

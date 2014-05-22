@@ -4,8 +4,9 @@ require 'rack/contrib/try_static'
 Bundler.setup
 Bundler.require
 
-use Rack::TryStatic, 
-  :urls => %w[/],
+use Rack::Deflater
+use Rack::Static, 
+  :urls => ["/img", "/css", "/js", "/fonts"],
   :root => "_site"
 
 run lambda { |env|

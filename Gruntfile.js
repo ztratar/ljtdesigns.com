@@ -7,6 +7,11 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		less: {
 			main: {
+				options: {
+					compress: true,
+					cleancss: true,
+					optimization: 2
+				},
 				files: {
 					'css/main.css': [
 						'bower_components/bootstrap/less/bootstrap.less',
@@ -22,6 +27,7 @@ module.exports = function(grunt) {
 					'js/main.min.js': [
 						'bower_components/jquery/dist/jquery.js',
 						'bower_components/bootstrap/js/collapse.js',
+						'libs/lazyload.js',
 						'libs/share.min.js',
 						'libs/slick/slick.js',
 						'js/main.js'
@@ -34,10 +40,10 @@ module.exports = function(grunt) {
 				files: ['less/**'],
 				tasks: 'less'
 			},
-      js: {
-        files: ['js/**'],
-        tasks: 'uglify'
-      }
+			js: {
+				files: ['js/**'],
+				tasks: 'uglify'
+			}
 		}
 	});
 
