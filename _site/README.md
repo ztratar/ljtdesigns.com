@@ -2,9 +2,9 @@ LJT Designs.com
 ===============
 
 This website was created for LJT Designs, Inc -- my mother and I's
-company that operates in Chicagoland.
+Home Design/Build company that operates in Chicagoland.
 
-Tech used: Jekyll, Boostrap, Underscore, jQuery, Slick.js, Lazyload.js,
+Tech used: Jekyll, Bootstrap, Underscore, jQuery, Slick.js, Lazyload.js,
 Share.js, Grunt, LESS, CSS3 Fonts, Ruby Rack + Ruby Deflater for Gzip,
 and Heroku for great, free hosting.
 
