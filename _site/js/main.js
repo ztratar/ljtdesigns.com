@@ -12,15 +12,17 @@ $(function() {
 		];
 		sectionPositions = [];
 		for (var section in sections) {
-			sectionPositions[sections[section]] = $('#' + sections[section]).offset().top;
+			if (sections[section]) {
+				sectionPositions[sections[section]] = $('#' + sections[section]).offset().top;
+			}
 		}
 	}
 
 	$('.img-carousel').slick({
 		onAfterChange: function(carousel) {
 			var $active = carousel.$list.find('.slick-active') || carousel.find('.img:eq(0)'),
-				$next = $active.next(),
-				$prev = $active.prev();
+				$next = $active ? $active.next() : false,
+				$prev = $active ? $active.prev() : false;
 
 			$.each([$active, $next, $prev], function(i, $wrap) {
 				if ($wrap) {
@@ -37,9 +39,9 @@ $(function() {
 	$('.slick-active + div').find('img').trigger('load-img');
 
 	calculateSections();
-	$(window).on('resize', calculateSections);
+	$(window).on('resize', _.throttle(calculateSections, 26));
 
-	$(window).on('scroll', function() {
+	$(window).on('scroll', _.throttle(function() {
 		var curScroll = $(window).scrollTop();
 
 		for (var pos in sectionPositions) {
@@ -48,7 +50,7 @@ $(function() {
 				$('ul.nav li.' + pos).addClass('active');
 			}
 		}
-	});
+	}, 16));
 
 	$('ul.nav a').on('click', function() {
 		var that = this,

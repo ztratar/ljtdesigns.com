@@ -450,6 +450,11 @@ ul.designs {
 			line-height: 26px;
 
 			@media (max-width: @screen-md) {
+				font-size: 14px;
+				line-height: 18px;
+			}
+
+			@media (max-width: @screen-sm) {
 				font-size: 16px;
 				line-height: 24px;
 			}
@@ -550,6 +555,11 @@ ul.designs {
 					margin-top: -91px !important;
 					position: absolute;
 					z-index: 400;
+					pointer-events: none;
+
+					&.active {
+						pointer-events: auto;
+					}
 
 					@media (max-width: @screen-xs) {
 						margin-left: -170px !important;
@@ -615,11 +625,11 @@ ul.designs {
 
 			p.main {
 				text-align: center;
-				font-size: 46px;
+				font-size: 36px;
 				font-family: 'Optimus';
 				line-height: 46px;
 				margin: 0;
-				padding: 24px 0 5px;
+				padding: 20px 0 5px;
 				letter-spacing: 0px;
 				opacity: 1;
 
@@ -631,7 +641,7 @@ ul.designs {
 			}
 
 			p {
-				font-size: 22px;
+				font-size: 18px;
 				font-weight: 100;
 				line-height: 28px;
 				margin: 4px 0 80px 0;
@@ -639,7 +649,7 @@ ul.designs {
 				opacity: 0.84;
 
 				@media (max-width: @screen-md) {
-					font-size: 20px;
+					font-size: 16px;
 				}
 			}
 

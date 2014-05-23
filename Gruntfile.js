@@ -27,6 +27,7 @@ module.exports = function(grunt) {
 					'js/main.min.js': [
 						'bower_components/jquery/dist/jquery.js',
 						'bower_components/bootstrap/js/collapse.js',
+						'libs/underscore.js',
 						'libs/lazyload.js',
 						'libs/share.min.js',
 						'libs/slick/slick.js',
