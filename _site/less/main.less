@@ -243,7 +243,6 @@ h4 {
 
 	.card {
 		position: absolute;
-		display: table;
 		width: 50%;
 		height: 50%;
 		text-align: center;
@@ -253,12 +252,24 @@ h4 {
 			width: 100%;
 			height: auto;
 			padding: 18px 0 32px 0;
+
+			left: auto !important;
+			right: auto !important;
+			top: auto !important;
+			bottom: auto !important;
+		}
+
+		.card-table-wrap {
+			display: table;
+			width: 100%;
+			height: 100%;
 		}
 
 		.card-contents {
 			display: table-cell;
 			vertical-align: middle;
 			padding: 0 40px;
+			text-align: center;
 		}
 
 		h3 {
@@ -292,10 +303,30 @@ h4 {
 
 		@card-bg: rgba(0,0,0,.08);
 
-		&.top-left { top: 0; left: 0; border-bottom: 1px solid @card-bg; border-right: 1px solid @card-bg; }
-		&.top-right { top: 0; right: 0; border-bottom: 1px solid @card-bg; }
-		&.bottom-left { bottom: 0; left: 0; border-right: 1px solid @card-bg; }
-		&.bottom-right { bottom: 0; right: 0;}
+		&.top-left {
+			top: 0;
+			left: 0;
+			right: 50%;
+			border-bottom: 1px solid @card-bg;
+			border-right: 1px solid @card-bg;
+
+			@media (max-width: @screen-sm) {
+				border-right: none;
+			}
+		}
+		&.top-right { top: 0; right: 0; left: 50%; border-bottom: 1px solid @card-bg; }
+		&.bottom-left {
+			bottom: 0;
+			left: 0;
+			right: 50%;
+			border-right: 1px solid @card-bg;
+
+			@media (max-width: @screen-sm) {
+				border-bottom: 1px solid @card-bg;
+				border-right: none;
+			}
+		}
+		&.bottom-right { bottom: 0; right: 0; left: 50%; }
 	}
 }
 
